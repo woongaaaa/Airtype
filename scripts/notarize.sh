@@ -11,15 +11,15 @@ if ! python3 -c 'import json; r=json.load(open("docs/release-gate.json")); asser
   echo 'Complete and review the release evidence before notarizing.' >&2; exit 1
 fi
 bash scripts/build.sh
-ditto -c -k --keepParent build/Airtype.app build/Airtype-notary.zip
+ditto -c -k --keepParent "$AIRTYPE_ARTIFACT_ROOT/Airtype.app" build/Airtype-notary.zip
 xcrun notarytool submit build/Airtype-notary.zip --keychain-profile "$NOTARY_PROFILE" --wait
-xcrun stapler staple build/Airtype.app
-xcrun stapler validate build/Airtype.app
+xcrun stapler staple "$AIRTYPE_ARTIFACT_ROOT/Airtype.app"
+xcrun stapler validate "$AIRTYPE_ARTIFACT_ROOT/Airtype.app"
 # package.sh normally rebuilds. Package this stapled app directly instead.
 staging="$(mktemp -d "${TMPDIR:-/tmp}/airtype-release.XXXXXX")"
 trap 'rm -rf "$staging"' EXIT
 mkdir -p dist
-ditto build/Airtype.app "$staging/Airtype.app"
+ditto "$AIRTYPE_ARTIFACT_ROOT/Airtype.app" "$staging/Airtype.app"
 ln -s /Applications "$staging/Applications"
 hdiutil create -volname Airtype -srcfolder "$staging" -ov -format UDZO dist/Airtype-0.1.0-arm64.dmg
 codesign --sign "$SIGNING_IDENTITY" --timestamp dist/Airtype-0.1.0-arm64.dmg

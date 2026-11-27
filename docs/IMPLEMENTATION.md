@@ -34,7 +34,7 @@
 - 현재 CLT의 SwiftPM 기본 빌드 경로와 Testing.framework 탐색 경로 차이를 우회하기 위해 native build system과 명시적 테스트 프레임워크 경로를 사용한다. 해당 옵션의 deprecation 경고가 있으므로 향후 툴체인 업데이트 시 재검토한다.
 - iCloud 작업 폴더에서 editable 설치의 `.pth`가 hidden 속성으로 저장되면 Python이 경로를 무시한다. 연구 명령은 `--no-editable`로 일반 wheel을 설치하며 소스 파일을 cache key에 포함한다.
 - MediaPipe가 의존하는 opencv-contrib-python과 별도 opencv-python의 파일 충돌을 피하도록 단일 wheel로 정리했다.
-- Finder/iCloud가 생성한 앱 번들에 FinderInfo를 붙이면 재서명이 실패할 수 있어, 빌드 산출물의 FinderInfo/ResourceFork만 정리한 뒤 서명한다. quarantine이나 시스템 보안 설정은 변경하지 않는다.
+- Finder/iCloud가 앱 번들에 FinderInfo를 다시 붙이면 서명 후에도 검증이 실패한다. 서명된 앱은 동기화되지 않는 사용자 캐시의 작업 폴더별 경로에 만들고 `build/Airtype.app`은 그 앱의 링크로 제공한다. DMG는 실제 캐시 앱에서 복사하고 복사본 서명도 검사한다. 기존 로컬 빌드 폴더는 백업하며 quarantine이나 시스템 보안 설정은 변경하지 않는다.
 
 ## 아직 검증하지 않은 항목
 
