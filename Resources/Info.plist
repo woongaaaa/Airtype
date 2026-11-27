@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+    <key>CFBundleIdentifier</key><string>io.github.woongaaaa.airtype</string>
+    <key>CFBundleName</key><string>Airtype</string>
+    <key>CFBundleDisplayName</key><string>Airtype</string>
+    <key>CFBundleExecutable</key><string>Airtype</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>0.1.0</string>
+    <key>CFBundleVersion</key><string>1</string>
+    <key>LSMinimumSystemVersion</key><string>14.0</string>
+    <key>NSHighResolutionCapable</key><true/>
+    <key>NSCameraUsageDescription</key><string>Airtype은 내장 카메라에서 손동작을 인식해 키보드와 포인터를 조작합니다. 영상은 저장하거나 전송하지 않습니다.</string>
+    <key>NSHumanReadableCopyright</key><string>Copyright © 2026 Airtype contributors. MIT License.</string>
+</dict></plist>

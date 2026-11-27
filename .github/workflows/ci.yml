@@ -1,0 +1,27 @@
+name: Build and verify development preview
+on:
+  push:
+    branches: [main, 'feat/**', 'fix/**']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-11-28
+      - uses: astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff # v6, verified 2026-11-28
+        with:
+          enable-cache: true
+          cache-dependency-glob: research/uv.lock
+      - name: Swift and Python checks
+        run: bash scripts/check.sh
+      - name: Build local development app
+        run: bash scripts/build.sh
+      - name: Confirm no accidental release qualification
+        run: python3 -c 'import json; r=json.load(open("docs/release-gate.json")); print("Release qualified:", r["qualified"])'

@@ -53,6 +53,8 @@ open build/Airtype.app --args --demo  # camera-free UI preview, no OS input
 
 기본 빌드는 로컬 개발용 ad-hoc 서명입니다. 다른 사용자에게 정상 배포하려면 Developer ID 서명·공증과 [출시 검증](docs/RELEASE.md)이 필요합니다. 카메라 권한의 주체를 명확히 하기 위해 `swift run Airtype` 대신 `.app` 번들을 실행하세요. 빌드 후 앱 정체성이 바뀌면 시스템 설정에서 손쉬운 사용 권한을 다시 등록해야 할 수 있습니다.
 
+서명된 앱은 iCloud 메타데이터 간섭을 피하기 위해 `~/Library/Caches/Airtype/` 아래에 생성하고 `build/Airtype.app` 링크로 제공합니다. 소스와 DMG는 프로젝트 폴더에 유지합니다.
+
 ## 구조와 기록
 
 - [PRD](docs/PRD.md): 사용자, 범위, 수치 기준, 변경 기록

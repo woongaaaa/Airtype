@@ -1,0 +1,25 @@
+[project]
+name = "airtype-lab"
+version = "0.1.0"
+description = "Offline, reproducible hand-tracking evaluation for Airtype"
+requires-python = ">=3.12,<3.13"
+dependencies = ["mediapipe>=0.10.20,<0.11", "opencv-contrib-python>=4.10,<6", "numpy>=1.26,<3"]
+
+[project.scripts]
+airtype-lab = "airtype_lab.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.uv]
+cache-keys = [{ file = "pyproject.toml" }, { file = "airtype_lab/**/*.py" }]
