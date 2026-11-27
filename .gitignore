@@ -1,0 +1,17 @@
+.build/
+.swiftpm/
+.DS_Store
+build/
+dist/
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+.coverage
+research/data/
+research/models/
+*.p12
+*.mobileprovision
+.env
+.env.*
+*.xcuserstate

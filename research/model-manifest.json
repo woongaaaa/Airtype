@@ -1,0 +1,7 @@
+{
+  "name": "MediaPipe Hand Landmarker float16 v1",
+  "url": "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
+  "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+  "downloaded_for_research": "2026-11-28",
+  "redistributed_in_app": false
+}

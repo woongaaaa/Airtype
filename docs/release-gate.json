@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.0-dev",
+  "qualified": false,
+  "checks": {
+    "english_10_wpm_raw_cer_under_5_percent": false,
+    "korean_key_error_under_5_percent": false,
+    "ime_and_shortcut_compatibility": false,
+    "pointer_tasks_95_percent": false,
+    "idle_false_events_under_1_per_10_minutes": false,
+    "live_recovery_no_stuck_buttons": false,
+    "live_processing_p95_under_100_ms": false,
+    "setup_and_fatigue_usability": false,
+    "five_external_participants_four_pass": false,
+    "two_apple_silicon_models_clean_install": false,
+    "supported_os_matrix": false,
+    "developer_id_available": false
+  },
+  "evidence": [],
+  "note": "Automated/synthetic tests are not evidence of real-hand accuracy or release qualification."
+}

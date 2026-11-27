@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "board": {"x": 0, "y": 0, "width": 1, "height": 1},
+  "scales": {"left": 0.16, "right": 0.16},
+  "pressThreshold": 0.16,
+  "tapThresholds": {}
+}

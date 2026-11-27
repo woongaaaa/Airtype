@@ -1,0 +1,2 @@
+{"participant":"synthetic-not-a-person","session":"synthetic-en","split":"evaluation","language":"en","reference":"hello world","raw":"helo world","final":"hello world","elapsed_seconds":10,"processing_ms":[10,20,30],"synthetic":true}
+{"participant":"synthetic-not-a-person","session":"synthetic-ko","split":"evaluation","language":"ko","reference":"한","raw":"한","final":"한","elapsed_seconds":3,"expected_keys":["g","k","s"],"actual_keys":["g","k","s"],"synthetic":true}
