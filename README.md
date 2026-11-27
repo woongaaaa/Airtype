@@ -4,6 +4,8 @@
 
 물리 키보드를 쓰기 어려운 일반 PC 사용자를 위한 보조 입력기를 만들고 있습니다. 양손 열 손가락 입력, 한글 두벌식·영문 QWERTY, 포인터·스크롤·브라우저 탐색을 하나의 앱으로 제공합니다.
 
+현재 main에는 계획 문서를 먼저 기록했습니다. 실행 가능한 개발 코드는 [구현 PR #7](https://github.com/woongaaaa/Airtype/pull/7)과 [feat/native-app-and-cv-lab 브랜치](https://github.com/woongaaaa/Airtype/tree/feat/native-app-and-cv-lab)에서 검토할 수 있습니다.
+
 > **현재 상태: 개발 프리뷰.** 앱·인식 실험·자동 테스트·DMG 생성 경로가 구현되어 있습니다. 실제 손으로 10 WPM·문자 오류율 5% 이하를 달성했다는 결과는 없습니다. 카메라/IME 실기기 평가, 외부 사용자 평가, 서명·공증 전이며 일반 사용자용 출시가 아닙니다. [출시 기준](docs/RELEASE.md)을 통과하기 전에는 정식 릴리스를 발행하지 않습니다.
 
 ## 시작하기
@@ -12,7 +14,7 @@
 - 개발에는 Swift 6 이상을 포함한 Xcode 또는 Command Line Tools가 필요합니다. Python 실험에는 [uv](https://docs.astral.sh/uv/)와 Python 3.12를 사용합니다.
 
 ```bash
-git clone https://github.com/woongaaaa/Airtype.git
+git clone --branch feat/native-app-and-cv-lab https://github.com/woongaaaa/Airtype.git
 cd Airtype
 bash scripts/build.sh
 open build/Airtype.app
